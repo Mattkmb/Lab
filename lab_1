@@ -1,0 +1,198 @@
+open System
+
+// Тип для числового значения
+type Number =
+    | IntValue of int
+    | FloatValue of float
+
+// Функция для ввода целого числа
+let rec getIntFromConsole z =
+    printf "%s" z
+    let s = Console.ReadLine()
+    match Int32.TryParse s with
+    | (true, value) -> value
+    | (false, _) ->
+        printfn "Ошибка: введите корректное целое число"
+        getIntFromConsole z
+
+// Функция для ввода числа, которое может быть Int или Float.
+
+let rec getNumberFromConsole z =
+    printf "%s" z
+    let s = Console.ReadLine()
+    match Int32.TryParse s with
+    | (true, i) -> IntValue i
+    | _ ->
+        match System.Double.TryParse s with
+        | (true, f) -> FloatValue f
+        | _ ->
+            printfn "Ошибка: введите корректное число (целое или вещественное)"
+            printfn "Вещественное число вводится через запятую (Пример: 12,21)"
+            getNumberFromConsole z
+
+// Функция для выбора пункта меню:
+let rec getChoice z =
+    printf "%s" z
+    let s = Console.ReadLine()
+    match Int32.TryParse s with
+    | (true, value) -> value
+    | (false, _) ->
+        printfn "Ошибка: введите число, соответствующее пункту меню."
+        getChoice z
+
+// Функция для создания списка из n одинаковых элементов (элемент имеет тип Number)
+let createList n element =
+    [ for i in 1..n -> element ]
+
+// Интерфейс 1: создание нового списка из одинаковых элементов.
+
+let Interface1 () =
+    let n = getIntFromConsole "Введите количество элементов списка из одинаковых элементов: "
+    if n <= 0 then
+        printfn "Ошибка: количество элементов должно быть больше 0"
+        []
+    else
+        let element = getNumberFromConsole "Введите элемент списка (целое или вещественное): "
+        let lst = createList n element
+        printfn "Итоговый список выглядит так: %A" lst
+        lst
+
+// ЗАДАНИЕ 2: Интерфейс для вычисления произведения цифр натурального числа (без изменений)
+let rec proizvedenie_cifr n =
+    if n < 10 then n
+    else (n % 10) * proizvedenie_cifr (n / 10)
+
+let Interface2 () =
+    let n = getIntFromConsole "Введите натуральное число: "
+    if n <= 0 then
+        printfn "Ошибка: число должно быть больше 0"
+    else
+        let produs = proizvedenie_cifr n
+        printfn "Произведение цифр числа %d = %d" n produs
+
+
+
+// Добавление элемента в конец списка.
+let addElement lst elem = lst @ [elem]
+
+// Удаление первого вхождения элемента из списка.
+let rec removeElement lst elem =
+    match lst with
+    | [] -> [] 
+    | h :: t when h = elem -> t
+    | h :: t -> h :: removeElement t elem
+
+// Поиск элемента в списке.
+let rec searchElement lst elem =
+    match lst with
+    | [] -> false
+    | h :: t -> if h = elem then true else searchElement t elem
+
+// Сцепка двух списков.
+let rec concatLists lst1 lst2 =
+    match lst1 with
+    | [] -> lst2 
+    | h :: t -> h :: concatLists t lst2
+
+// Получение элемента по индексу (индексация с 0).
+let rec elementAt lst index =
+    match lst, index with
+    | [], _ -> failwith "Индекс вне диапазона"
+    | h :: _, 0 -> h
+    | _ :: t, n when n > 0 -> elementAt t (n - 1)
+    | _ -> failwith "Неверный индекс"
+
+// Меню операций со списком.
+let rec showMenu_for_z3 lst =
+    printfn "\n=================== МЕНЮ ОПЕРАЦИЙ СО СПИСКОМ ======================"
+    printfn "Текущий список: %A" lst
+    printfn "1. Добавить элемент в список"
+    printfn "2. Удалить элемент из списка"
+    printfn "3. Поиск элемента в списке"
+    printfn "4. Сцепка двух списков."
+    printfn "5. Получить элемент по номеру"
+    printfn "6. Назад в главное меню"
+    printfn "7. Выход."
+    let choice = getChoice "Введите номер опции: "
+    match choice with
+    | 1 ->
+        printfn "\nВы выбрали: Добавить элемент в список."
+        let elem = getNumberFromConsole "Введите элемент для добавления (целое или вещественное): "
+        let newLst = addElement lst elem
+        printfn "Обновлённый список: %A" newLst
+        showMenu_for_z3 newLst
+    | 2 ->
+        printfn "\nВы выбрали: Удалить элемент из списка."
+        let elem = getNumberFromConsole "Введите элемент для удаления (целое или вещественное): "
+        let newLst = removeElement lst elem
+        printfn "Обновлённый список: %A" newLst
+        showMenu_for_z3 newLst
+    | 3 ->
+        printfn "\nВы выбрали: Поиск элемента в списке"
+        let elem = getNumberFromConsole "Введите элемент для поиска (целое или вещественное): "
+        if searchElement lst elem then
+            printfn "Элемент %A найден в списке" elem
+        else
+            printfn "Элемент %A не найден в списке" elem
+        showMenu_for_z3 lst
+    | 4 ->
+        printfn "\nВы выбрали: Сцепка двух списков."
+        let count = getIntFromConsole "Введите количество элементов второго списка: "
+        let rec readSecondList n acc =
+            if n <= 0 then List.rev acc
+            else 
+                let e = getNumberFromConsole (sprintf "Введите элемент %d второго списка (целое или вещественное): " (List.length acc + 1))
+                readSecondList (n - 1) (e :: acc)
+        let secondList = readSecondList count []
+        let newLst = concatLists lst secondList
+        printfn "Обновлённый список после сцепки: %A" newLst
+        showMenu_for_z3 newLst
+    | 5 ->
+        printfn "\nВы выбрали: Получить элемент по номеру"
+        let index = getIntFromConsole "Введите индекс элемента (начиная с 0): "
+        try
+            let e = elementAt lst index
+            printfn "Элемент по индексу %d: %A" index e
+        with ex ->
+            printfn "Ошибка: %s" ex.Message
+        showMenu_for_z3 lst
+    | 6 ->
+        showMenu ()
+    | 7 ->
+        printfn "\nЗавершение работы программы"
+        System.Environment.Exit(0)
+    | _ ->
+        printfn "\nНеверная опция. Пожалуйста, введите корректный номер"
+        showMenu_for_z3 lst
+
+// Главное меню
+and showMenu () =
+    printfn "\n=================== ГЛАВНОЕ МЕНЮ ======================"
+    printfn "1. Создать список из n одинаковых элементов"
+    printfn "2. Найти произведение цифр натурального числа"
+    printfn "3. Операции со списками"
+    printfn "4. Выход"
+    let choice = getChoice "Введите номер опции: "
+    match choice with
+    | 1 ->
+        printfn "\nВы выбрали: Создать список из n одинаковых элементов"
+        let newLst = Interface1 ()
+        showMenu_for_z3 newLst
+    | 2 ->
+        printfn "\nВы выбрали: Найти произведение цифр натурального числа"
+        Interface2 ()
+        showMenu ()
+    | 3 ->
+        printfn "\nВы выбрали: Операции со списками"
+        showMenu_for_z3 []
+    | 4 ->
+        printfn "\nЗавершение работы программы"
+        System.Environment.Exit(0)
+    | _ ->
+        printfn "\nНеверная опция. Пожалуйста, введите корректный номер"
+        showMenu ()
+
+[<EntryPoint>]
+let main argv =
+    showMenu ()
+    0
