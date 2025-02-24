@@ -161,10 +161,10 @@ let rec showMenu_for_z3 lst =
         let index = getIntFromConsole "Введите индекс элемента (начиная с 0): "
         try
             let e = elementAt lst index
-            printfn "Элемент по индексу %d: %A" index e
+            printfn "Элемент по индексу %A: %A" index e
         with ex ->
             Console.ForegroundColor <- ConsoleColor.Red
-            printfn "Ошибка: %s" ex.Message
+            printfn "Ошибка: %A" ex.Message
             Console.ResetColor()
         showMenu_for_z3 lst
     | 6 ->
