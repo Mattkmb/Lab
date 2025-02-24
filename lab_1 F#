@@ -3,7 +3,7 @@ open System
 // Тип для числового значения
 type Number =
     | IntValue of int
-    | FloatValue of float
+    | DoubleValue of float
 
 // Функция для ввода целого числа
 let rec getIntFromConsole z =
@@ -12,11 +12,12 @@ let rec getIntFromConsole z =
     match Int32.TryParse s with
     | (true, value) -> value
     | (false, _) ->
+        Console.ForegroundColor <- ConsoleColor.Red
         printfn "Ошибка: введите корректное целое число"
+        Console.ResetColor()
         getIntFromConsole z
 
-// Функция для ввода числа, которое может быть Int или Float.
-
+// Функция для ввода числа (Int или Double)
 let rec getNumberFromConsole z =
     printf "%s" z
     let s = Console.ReadLine()
@@ -24,10 +25,12 @@ let rec getNumberFromConsole z =
     | (true, i) -> IntValue i
     | _ ->
         match System.Double.TryParse s with
-        | (true, f) -> FloatValue f
+        | (true, f) -> DoubleValue f
         | _ ->
+            Console.ForegroundColor <- ConsoleColor.Red
             printfn "Ошибка: введите корректное число (целое или вещественное)"
             printfn "Вещественное число вводится через запятую (Пример: 12,21)"
+            Console.ResetColor()
             getNumberFromConsole z
 
 // Функция для выбора пункта меню:
@@ -37,19 +40,23 @@ let rec getChoice z =
     match Int32.TryParse s with
     | (true, value) -> value
     | (false, _) ->
+        Console.ForegroundColor <- ConsoleColor.Red
         printfn "Ошибка: введите число, соответствующее пункту меню."
+        Console.ResetColor()
         getChoice z
 
 // Функция для создания списка из n одинаковых элементов (элемент имеет тип Number)
 let createList n element =
     [ for i in 1..n -> element ]
 
-// Интерфейс 1: создание нового списка из одинаковых элементов.
+// Интерфейс 1: создание нового списка из одинаковых элементов
 
 let Interface1 () =
     let n = getIntFromConsole "Введите количество элементов списка из одинаковых элементов: "
     if n <= 0 then
+        Console.ForegroundColor <- ConsoleColor.Red
         printfn "Ошибка: количество элементов должно быть больше 0"
+        Console.ResetColor()
         []
     else
         let element = getNumberFromConsole "Введите элемент списка (целое или вещественное): "
@@ -65,7 +72,9 @@ let rec proizvedenie_cifr n =
 let Interface2 () =
     let n = getIntFromConsole "Введите натуральное число: "
     if n <= 0 then
+        Console.ForegroundColor <- ConsoleColor.Red
         printfn "Ошибка: число должно быть больше 0"
+        Console.ResetColor()
     else
         let produs = proizvedenie_cifr n
         printfn "Произведение цифр числа %d = %d" n produs
@@ -75,26 +84,26 @@ let Interface2 () =
 // Добавление элемента в конец списка.
 let addElement lst elem = lst @ [elem]
 
-// Удаление первого вхождения элемента из списка.
+// Удаление первого вхождения элемента из списка
 let rec removeElement lst elem =
     match lst with
     | [] -> [] 
     | h :: t when h = elem -> t
     | h :: t -> h :: removeElement t elem
 
-// Поиск элемента в списке.
+// Поиск элемента в списке
 let rec searchElement lst elem =
     match lst with
     | [] -> false
     | h :: t -> if h = elem then true else searchElement t elem
 
-// Сцепка двух списков.
+// Сцепка двух списков
 let rec concatLists lst1 lst2 =
     match lst1 with
     | [] -> lst2 
     | h :: t -> h :: concatLists t lst2
 
-// Получение элемента по индексу (индексация с 0).
+// Получение элемента по индексу (индексация с 0)
 let rec elementAt lst index =
     match lst, index with
     | [], _ -> failwith "Индекс вне диапазона"
@@ -102,7 +111,7 @@ let rec elementAt lst index =
     | _ :: t, n when n > 0 -> elementAt t (n - 1)
     | _ -> failwith "Неверный индекс"
 
-// Меню операций со списком.
+// Меню операций со списком
 let rec showMenu_for_z3 lst =
     printfn "\n=================== МЕНЮ ОПЕРАЦИЙ СО СПИСКОМ ======================"
     printfn "Текущий список: %A" lst
@@ -154,7 +163,9 @@ let rec showMenu_for_z3 lst =
             let e = elementAt lst index
             printfn "Элемент по индексу %d: %A" index e
         with ex ->
+            Console.ForegroundColor <- ConsoleColor.Red
             printfn "Ошибка: %s" ex.Message
+            Console.ResetColor()
         showMenu_for_z3 lst
     | 6 ->
         showMenu ()
@@ -162,7 +173,9 @@ let rec showMenu_for_z3 lst =
         printfn "\nЗавершение работы программы"
         System.Environment.Exit(0)
     | _ ->
+        Console.ForegroundColor <- ConsoleColor.Red
         printfn "\nНеверная опция. Пожалуйста, введите корректный номер"
+        Console.ResetColor()
         showMenu_for_z3 lst
 
 // Главное меню
@@ -189,7 +202,9 @@ and showMenu () =
         printfn "\nЗавершение работы программы"
         System.Environment.Exit(0)
     | _ ->
+        Console.ForegroundColor <- ConsoleColor.Red
         printfn "\nНеверная опция. Пожалуйста, введите корректный номер"
+        Console.ResetColor()
         showMenu ()
 
 [<EntryPoint>]
