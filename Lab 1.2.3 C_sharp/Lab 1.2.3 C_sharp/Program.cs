@@ -6,7 +6,7 @@ namespace Project2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("----- Тестирование Project2: Задания 2 и 3 (класс Money) -----");
+            Console.WriteLine("----- Тестирование Project2: Задания 2 и 3  -----");
 
             // Создание объекта и ввод данных
             Money m1 = new Money();
