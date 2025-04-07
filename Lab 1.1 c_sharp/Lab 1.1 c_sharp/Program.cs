@@ -6,7 +6,7 @@ namespace Project1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("----- Тестирование Project1: Задание 1 (вариант 2) -----");
+            Console.WriteLine("----- Тестирование Project1: Задание 1  -----");
 
             // Тестирование базового класса
             BaseClass baseObj = new BaseClass();
