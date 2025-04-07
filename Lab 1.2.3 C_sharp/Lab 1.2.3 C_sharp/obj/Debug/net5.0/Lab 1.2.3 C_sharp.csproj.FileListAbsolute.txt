@@ -1,0 +1,16 @@
+C:\Users\Матвей\source\repos\Lab 1.2.3 C_sharp\Lab 1.2.3 C_sharp\bin\Debug\net5.0\Lab 1.2.3 C_sharp.exe
+C:\Users\Матвей\source\repos\Lab 1.2.3 C_sharp\Lab 1.2.3 C_sharp\bin\Debug\net5.0\Lab 1.2.3 C_sharp.deps.json
+C:\Users\Матвей\source\repos\Lab 1.2.3 C_sharp\Lab 1.2.3 C_sharp\bin\Debug\net5.0\Lab 1.2.3 C_sharp.runtimeconfig.json
+C:\Users\Матвей\source\repos\Lab 1.2.3 C_sharp\Lab 1.2.3 C_sharp\bin\Debug\net5.0\Lab 1.2.3 C_sharp.runtimeconfig.dev.json
+C:\Users\Матвей\source\repos\Lab 1.2.3 C_sharp\Lab 1.2.3 C_sharp\bin\Debug\net5.0\Lab 1.2.3 C_sharp.dll
+C:\Users\Матвей\source\repos\Lab 1.2.3 C_sharp\Lab 1.2.3 C_sharp\bin\Debug\net5.0\ref\Lab 1.2.3 C_sharp.dll
+C:\Users\Матвей\source\repos\Lab 1.2.3 C_sharp\Lab 1.2.3 C_sharp\bin\Debug\net5.0\Lab 1.2.3 C_sharp.pdb
+C:\Users\Матвей\source\repos\Lab 1.2.3 C_sharp\Lab 1.2.3 C_sharp\obj\Debug\net5.0\Lab 1.2.3 C_sharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Матвей\source\repos\Lab 1.2.3 C_sharp\Lab 1.2.3 C_sharp\obj\Debug\net5.0\Lab 1.2.3 C_sharp.AssemblyInfoInputs.cache
+C:\Users\Матвей\source\repos\Lab 1.2.3 C_sharp\Lab 1.2.3 C_sharp\obj\Debug\net5.0\Lab 1.2.3 C_sharp.AssemblyInfo.cs
+C:\Users\Матвей\source\repos\Lab 1.2.3 C_sharp\Lab 1.2.3 C_sharp\obj\Debug\net5.0\Lab 1.2.3 C_sharp.csproj.CoreCompileInputs.cache
+C:\Users\Матвей\source\repos\Lab 1.2.3 C_sharp\Lab 1.2.3 C_sharp\obj\Debug\net5.0\Lab 1.2.3 C_sharp.dll
+C:\Users\Матвей\source\repos\Lab 1.2.3 C_sharp\Lab 1.2.3 C_sharp\obj\Debug\net5.0\ref\Lab 1.2.3 C_sharp.dll
+C:\Users\Матвей\source\repos\Lab 1.2.3 C_sharp\Lab 1.2.3 C_sharp\obj\Debug\net5.0\Lab 1.2.3 C_sharp.pdb
+C:\Users\Матвей\source\repos\Lab 1.2.3 C_sharp\Lab 1.2.3 C_sharp\obj\Debug\net5.0\Lab 1.2.3 C_sharp.genruntimeconfig.cache
+C:\Users\Матвей\source\repos\Lab 1.2.3 C_sharp\Lab 1.2.3 C_sharp\obj\Debug\net5.0\Lab 1.2.3 C_sharp.csproj.AssemblyReference.cache
