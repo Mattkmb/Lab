@@ -7,24 +7,6 @@ namespace Project2
         private uint rubles;
         private byte kopeks; 
 
-        // Свойства
-        public uint Rubles
-        {
-            get { return rubles; }
-            set { rubles = value; }
-        }
-
-        public byte Kopeks
-        {
-            get { return kopeks; }
-            set
-            {
-                if (value >= 100)
-                    throw new ArgumentException("Копеек должно быть меньше 100.");
-                kopeks = value;
-            }
-        }
-
         // Конструктор по умолчанию
         public Money()
         {
@@ -103,7 +85,7 @@ namespace Project2
         }
 
         // Перегрузка бинарного оператора – для вычитания копеек
-        public static Money operator -(Money m, uint subKopeks)
+        private static Money operator -(Money m, uint subKopeks)
         {
             uint total = m.rubles * 100 + m.kopeks;
             total = total < subKopeks ? 0 : total - subKopeks;
