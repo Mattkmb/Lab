@@ -339,9 +339,9 @@ namespace Lab7Project
         // ============================
         public static void Task8_HashSet(List<string> masterGames, List<HashSet<string>> studentGames)
         {
-            // Вычисляем объединение (игры, в которые играет хотя бы один студент)
+            
             HashSet<string> union = new HashSet<string>();
-            // Для пересечения (игры, в которые играют все студенты) инициализируем первым множеством студента, если оно есть.
+        
             HashSet<string> intersection = (studentGames.Count > 0) ? new HashSet<string>(studentGames[0]) : new HashSet<string>();
 
             foreach (var games in studentGames)
@@ -349,7 +349,7 @@ namespace Lab7Project
                 union.UnionWith(games);
                 intersection.IntersectWith(games);
             }
-            // Вычисляем игры, в которые не играет ни один студент: masterGames \ union
+            // Вычисляем игры, в которые не играет ни один студент
             HashSet<string> notPlayed = new HashSet<string>(masterGames);
             notPlayed.ExceptWith(union);
 
