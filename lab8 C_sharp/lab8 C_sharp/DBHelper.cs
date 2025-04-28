@@ -1,12 +1,16 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
 namespace MusicCatalog
 {
+    /// <summary>
+    /// Вспомогательные методы для работы с «базой» в бинарном файле.
+    /// </summary>
     public static class DBHelper
     {
+        /// <summary>Загружает список треков из файла.</summary>
         public static List<Music> LoadFromFile(string filePath)
         {
             var list = new List<Music>();
@@ -14,6 +18,7 @@ namespace MusicCatalog
             {
                 using var fs = new FileStream(filePath, FileMode.Open);
                 using var reader = new BinaryReader(fs);
+
                 int count = reader.ReadInt32();
                 for (int i = 0; i < count; i++)
                 {
@@ -39,12 +44,14 @@ namespace MusicCatalog
             return list;
         }
 
+        /// <summary>Сохраняет список треков в файл.</summary>
         public static void SaveToFile(string filePath, List<Music> list)
         {
             try
             {
                 using var fs = new FileStream(filePath, FileMode.Create);
                 using var writer = new BinaryWriter(fs);
+
                 writer.Write(list.Count);
                 foreach (var m in list)
                 {
@@ -64,31 +71,63 @@ namespace MusicCatalog
             }
         }
 
+        /// <summary>Добавляет трек в список.</summary>
         public static void AddMusic(List<Music> list, Music music)
             => list.Add(music);
 
+        /// <summary>Удаляет трек по указанному Id.</summary>
         public static bool DeleteMusic(List<Music> list, int id)
         {
-            var m = list.FirstOrDefault(x => x.Id == id);
-            if (m != null) { list.Remove(m); return true; }
+            var query = from m in list
+                        where m.Id == id
+                        select m;
+
+            var track = query.FirstOrDefault();
+            if (track != null)
+            {
+                list.Remove(track);
+                return true;
+            }
             return false;
         }
 
-        public static List<Music> GetByArtist(List<Music> list, string artist) =>
-            list.Where(m => m.Artist.Equals(artist, StringComparison.OrdinalIgnoreCase))
-                .ToList();
+        /// <summary>Возвращает все треки данного исполнителя.</summary>
+        public static List<Music> GetByArtist(List<Music> list, string artist)
+        {
+            var query = from m in list
+                        where m.Artist.Equals(artist, StringComparison.OrdinalIgnoreCase)
+                        select m;
+            return query.ToList();
+        }
 
-        public static List<Music> GetByGenre(List<Music> list, string genre) =>
-            list.Where(m => m.Genre.Equals(genre, StringComparison.OrdinalIgnoreCase))
-                .ToList();
+        /// <summary>Возвращает все треки указанного жанра.</summary>
+        public static List<Music> GetByGenre(List<Music> list, string genre)
+        {
+            var query = from m in list
+                        where m.Genre.Equals(genre, StringComparison.OrdinalIgnoreCase)
+                        select m;
+            return query.ToList();
+        }
 
-        public static int CountByArtist(List<Music> list, string artist) =>
-            list.Count(m => m.Artist.Equals(artist, StringComparison.OrdinalIgnoreCase));
+        /// <summary>Считает количество треков данного исполнителя.</summary>
+        public static int CountByArtist(List<Music> list, string artist)
+        {
+            var query = from m in list
+                        where m.Artist.Equals(artist, StringComparison.OrdinalIgnoreCase)
+                        select m;
+            return query.Count();
+        }
 
+        /// <summary>Вычисляет среднюю длительность трека.</summary>
         public static TimeSpan AverageDuration(List<Music> list)
         {
-            if (!list.Any()) return TimeSpan.Zero;
-            double avgSec = list.Average(m => m.Duration.TotalSeconds);
+            if (!list.Any())
+                return TimeSpan.Zero;
+
+            var query = from m in list
+                        select m.Duration.TotalSeconds;
+
+            double avgSec = query.Average();
             return TimeSpan.FromSeconds(avgSec);
         }
     }
