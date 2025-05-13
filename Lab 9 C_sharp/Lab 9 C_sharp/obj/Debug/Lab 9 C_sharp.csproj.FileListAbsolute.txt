@@ -1,0 +1,14 @@
+C:\Users\Матвей\source\repos\Lab 9 C_sharp\Lab 9 C_sharp\obj\Debug\App.g.cs
+C:\Users\Матвей\source\repos\Lab 9 C_sharp\Lab 9 C_sharp\obj\Debug\Lab 9 C_sharp_MarkupCompile.cache
+C:\Users\Матвей\source\repos\Lab 9 C_sharp\Lab 9 C_sharp\obj\Debug\MainWindow.baml
+C:\Users\Матвей\source\repos\Lab 9 C_sharp\Lab 9 C_sharp\obj\Debug\MainWindow.g.cs
+C:\Users\Матвей\source\repos\Lab 9 C_sharp\Lab 9 C_sharp\obj\Debug\Lab 9 C_sharp.g.resources
+C:\Users\Матвей\source\repos\Lab 9 C_sharp\Lab 9 C_sharp\obj\Debug\Lab_9_C_sharp.Properties.Resources.resources
+C:\Users\Матвей\source\repos\Lab 9 C_sharp\Lab 9 C_sharp\obj\Debug\Lab 9 C_sharp.csproj.GenerateResource.cache
+C:\Users\Матвей\source\repos\Lab 9 C_sharp\Lab 9 C_sharp\obj\Debug\Lab 9 C_sharp.csproj.CoreCompileInputs.cache
+C:\Users\Матвей\source\repos\Lab 9 C_sharp\Lab 9 C_sharp\bin\Debug\Lab 9 C_sharp.exe.config
+C:\Users\Матвей\source\repos\Lab 9 C_sharp\Lab 9 C_sharp\bin\Debug\Lab 9 C_sharp.exe
+C:\Users\Матвей\source\repos\Lab 9 C_sharp\Lab 9 C_sharp\bin\Debug\Lab 9 C_sharp.pdb
+C:\Users\Матвей\source\repos\Lab 9 C_sharp\Lab 9 C_sharp\obj\Debug\Lab 9 C_sharp.exe
+C:\Users\Матвей\source\repos\Lab 9 C_sharp\Lab 9 C_sharp\obj\Debug\Lab 9 C_sharp.pdb
+C:\Users\Матвей\source\repos\Lab 9 C_sharp\Lab 9 C_sharp\obj\Debug\Lab 9 C_sharp.csproj.AssemblyReference.cache
