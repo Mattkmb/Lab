@@ -1,0 +1,13 @@
+program S;
+var
+  numbers: array [1..5] of integer;
+  i, sum: integer;
+begin
+  numbers[1] := 10;
+  numbers[2] := 20;
+  numbers[3] := numbers[1] + numbers[2];
+  sum := 0;
+  for i := 1 to 3 do
+    sum := sum + numbers[i];
+  numbers[4] := sum;
+end.

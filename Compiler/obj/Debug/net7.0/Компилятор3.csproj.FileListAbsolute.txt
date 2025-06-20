@@ -1,0 +1,28 @@
+C:\Users\roda4\OneDrive\Рабочий стол\учеба\4 семестр\ЯП\программы\Компилятор3\bin\Debug\net7.0\Компилятор3.exe
+C:\Users\roda4\OneDrive\Рабочий стол\учеба\4 семестр\ЯП\программы\Компилятор3\bin\Debug\net7.0\Компилятор3.deps.json
+C:\Users\roda4\OneDrive\Рабочий стол\учеба\4 семестр\ЯП\программы\Компилятор3\bin\Debug\net7.0\Компилятор3.runtimeconfig.json
+C:\Users\roda4\OneDrive\Рабочий стол\учеба\4 семестр\ЯП\программы\Компилятор3\bin\Debug\net7.0\Компилятор3.dll
+C:\Users\roda4\OneDrive\Рабочий стол\учеба\4 семестр\ЯП\программы\Компилятор3\bin\Debug\net7.0\Компилятор3.pdb
+C:\Users\roda4\OneDrive\Рабочий стол\учеба\4 семестр\ЯП\программы\Компилятор3\obj\Debug\net7.0\Компилятор3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\roda4\OneDrive\Рабочий стол\учеба\4 семестр\ЯП\программы\Компилятор3\obj\Debug\net7.0\Компилятор3.AssemblyInfoInputs.cache
+C:\Users\roda4\OneDrive\Рабочий стол\учеба\4 семестр\ЯП\программы\Компилятор3\obj\Debug\net7.0\Компилятор3.AssemblyInfo.cs
+C:\Users\roda4\OneDrive\Рабочий стол\учеба\4 семестр\ЯП\программы\Компилятор3\obj\Debug\net7.0\Компилятор3.csproj.CoreCompileInputs.cache
+C:\Users\roda4\OneDrive\Рабочий стол\учеба\4 семестр\ЯП\программы\Компилятор3\obj\Debug\net7.0\Компилятор3.dll
+C:\Users\roda4\OneDrive\Рабочий стол\учеба\4 семестр\ЯП\программы\Компилятор3\obj\Debug\net7.0\refint\Компилятор3.dll
+C:\Users\roda4\OneDrive\Рабочий стол\учеба\4 семестр\ЯП\программы\Компилятор3\obj\Debug\net7.0\Компилятор3.pdb
+C:\Users\roda4\OneDrive\Рабочий стол\учеба\4 семестр\ЯП\программы\Компилятор3\obj\Debug\net7.0\Компилятор3.genruntimeconfig.cache
+C:\Users\roda4\OneDrive\Рабочий стол\учеба\4 семестр\ЯП\программы\Компилятор3\obj\Debug\net7.0\ref\Компилятор3.dll
+C:\PascalCompiler3\Compiler\obj\Debug\net7.0\Компилятор3.GeneratedMSBuildEditorConfig.editorconfig
+C:\PascalCompiler3\Compiler\obj\Debug\net7.0\Компилятор3.AssemblyInfoInputs.cache
+C:\PascalCompiler3\Compiler\obj\Debug\net7.0\Компилятор3.AssemblyInfo.cs
+C:\PascalCompiler3\Compiler\obj\Debug\net7.0\Компилятор3.csproj.CoreCompileInputs.cache
+C:\PascalCompiler3\Compiler\obj\Debug\net7.0\Компилятор3.dll
+C:\PascalCompiler3\Compiler\obj\Debug\net7.0\refint\Компилятор3.dll
+C:\PascalCompiler3\Compiler\obj\Debug\net7.0\Компилятор3.pdb
+C:\PascalCompiler3\Compiler\bin\Debug\net7.0\Компилятор3.exe
+C:\PascalCompiler3\Compiler\bin\Debug\net7.0\Компилятор3.deps.json
+C:\PascalCompiler3\Compiler\bin\Debug\net7.0\Компилятор3.runtimeconfig.json
+C:\PascalCompiler3\Compiler\bin\Debug\net7.0\Компилятор3.dll
+C:\PascalCompiler3\Compiler\bin\Debug\net7.0\Компилятор3.pdb
+C:\PascalCompiler3\Compiler\obj\Debug\net7.0\Компилятор3.genruntimeconfig.cache
+C:\PascalCompiler3\Compiler\obj\Debug\net7.0\ref\Компилятор3.dll

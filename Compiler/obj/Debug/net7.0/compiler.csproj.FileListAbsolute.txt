@@ -1,0 +1,14 @@
+C:\PascalCompiler4\Compiler\obj\Debug\net7.0\compiler.GeneratedMSBuildEditorConfig.editorconfig
+C:\PascalCompiler4\Compiler\obj\Debug\net7.0\compiler.AssemblyInfoInputs.cache
+C:\PascalCompiler4\Compiler\obj\Debug\net7.0\compiler.AssemblyInfo.cs
+C:\PascalCompiler4\Compiler\obj\Debug\net7.0\compiler.csproj.CoreCompileInputs.cache
+C:\PascalCompiler4\Compiler\bin\Debug\net7.0\compiler.exe
+C:\PascalCompiler4\Compiler\bin\Debug\net7.0\compiler.deps.json
+C:\PascalCompiler4\Compiler\bin\Debug\net7.0\compiler.runtimeconfig.json
+C:\PascalCompiler4\Compiler\bin\Debug\net7.0\compiler.dll
+C:\PascalCompiler4\Compiler\bin\Debug\net7.0\compiler.pdb
+C:\PascalCompiler4\Compiler\obj\Debug\net7.0\compiler.dll
+C:\PascalCompiler4\Compiler\obj\Debug\net7.0\refint\compiler.dll
+C:\PascalCompiler4\Compiler\obj\Debug\net7.0\compiler.pdb
+C:\PascalCompiler4\Compiler\obj\Debug\net7.0\compiler.genruntimeconfig.cache
+C:\PascalCompiler4\Compiler\obj\Debug\net7.0\ref\compiler.dll
